@@ -4,7 +4,7 @@ import sys
 import socket
 # Pyfiglet : Affiche un texte stylisé en ASCII.
 import pyfiglet
-ascii_banner = pyfiglet.figlet_format("192.168.1.197 \n Python 4 Pentester\nPort Scanner")
+ascii_banner = pyfiglet.figlet_format("192.168.1.1 \n Python 4 Pentester\nPort Scanner")
 print(ascii_banner)
 
 #address ip de la machine a scanner

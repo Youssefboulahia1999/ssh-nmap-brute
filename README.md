@@ -73,7 +73,7 @@ pip install pyfiglet
 
 Modifiez l'adresse IP dans le script Python :
 
-ip = '192.168.1.197'
+ip = '192.12.1.1'
 
 Exécutez le script :
 
@@ -91,7 +91,7 @@ Affichage des résultats : Les ports ouverts sont affichés dans la console.
 
 📊 Exemple de sortie
 
-192.168.1.197
+192.12.1.1
 Python 4 Pentester
 Port Scanner
 

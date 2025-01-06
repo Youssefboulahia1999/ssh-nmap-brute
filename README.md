@@ -1,101 +1,89 @@
-🛠️ Brute Scanner
+🛠️ Python Security Toolkit
 
-📚 Description
+Une collection de trois scripts Python essentiels pour les tests d'intrusion : Brute Scanner, Port Scanner, et SSH Brute Force Attack.
 
-Ce script Python permet d'identifier les sous-domaines actifs d'un domaine cible en utilisant une liste pré-définie de sous-domaines.
-
-Il vérifie chaque sous-domaine de la liste en effectuant une requête HTTP et affiche ceux qui répondent correctement.
-
-🚀 Fonctionnalités
-
-Lecture d'une liste de sous-domaines depuis un fichier (subdomains.txt).
-
-Vérification de chaque sous-domaine via une requête HTTP.
-
-Affichage des sous-domaines valides.
-
-🛠️ Prérequis
-
-Assurez-vous d'avoir installé :
-
-Python 3.x
-
-Bibliothèque requests
-
-Vous pouvez installer requests avec pip :
-
-pip install requests
-
-📂 Structure du Projet
-
-├── subdomains.txt  # Liste des sous-domaines à tester
-├── scanner.py      # Script principal
-
-💻 Utilisation
-
-Préparez un fichier subdomains.txt contenant une liste de sous-domaines (un par ligne).
-
-Lancez le script avec la commande suivante :
-
-python scanner.py example.com
-
-Remplacez example.com par le domaine cible.
-
-
-
-🛠️ Pentester - Port Scanner
-
-Ce projet est un scanner de ports simple écrit en Python. Il permet de vérifier les ports ouverts sur une adresse IP spécifique afin d'analyser la surface d'attaque d'une machine cible.
+📚 1. Brute Scanner
 
 📋 Description
+Ce script identifie les sous-domaines actifs d'un domaine cible en utilisant une liste pré-définie de sous-domaines. Chaque sous-domaine est vérifié par une requête HTTP, et seuls les sous-domaines valides sont affichés.
 
-Le programme scanne les ports d'une adresse IP donnée.
-
-Utilise le protocole TCP pour établir des connexions.
-
-Affiche les ports ouverts après analyse.
-
-Intègre une bannière ASCII générée avec Pyfiglet pour une présentation stylisée.
-
+🚀 Fonctionnalités
+Lecture d'une liste de sous-domaines depuis un fichier (subdomains.txt).
+Vérification des sous-domaines via des requêtes HTTP.
+Affichage des sous-domaines actifs.
 🛠️ Prérequis
-
-Assurez-vous d'avoir installé les bibliothèques suivantes :
-
 Python 3.x
+requests
+Installez la bibliothèque avec :
 
-Pyfiglet
+pip install requests
+💻 Utilisation
+Préparez un fichier subdomains.txt avec une liste de sous-domaines (un par ligne).
+Lancez le script :
+python scanner.py example.com
+Remplacez example.com par le domaine cible.
 
-Installation des dépendances :
+📂 Structure du Projet
+├── subdomains.txt  # Liste des sous-domaines
+├── scanner.py      # Script principal
+🛠️ 2. Pentester - Port Scanner
+
+📋 Description
+Un scanner de ports TCP conçu pour analyser une adresse IP spécifique afin de détecter les ports ouverts.
+
+🚀 Fonctionnalités
+Scan des ports de 1 à 65535.
+Timeout optimisé pour des scans rapides.
+Affichage clair des résultats avec une bannière ASCII générée par Pyfiglet.
+🛠️ Prérequis
+Python 3.x
+pyfiglet
+Installez la bibliothèque avec :
 
 pip install pyfiglet
-
-🚀 Utilisation
-
-Modifiez l'adresse IP dans le script Python :
-
+💻 Utilisation
+Modifiez l'adresse IP directement dans le script :
 ip = '192.12.1.1'
-
-Exécutez le script :
-
+Lancez le script :
 python port_scanner.py
-
-⚙️ Fonctionnement du script
-
-Bannière ASCII : Une bannière est affichée au lancement du script.
-
-Scan des ports : Les ports de 1 à 65535 sont testés.
-
-Timeout court : Chaque port est sondé avec une limite de temps de 0,5 seconde.
-
-Affichage des résultats : Les ports ouverts sont affichés dans la console.
-
 📊 Exemple de sortie
-
-192.12.1.1
+192.12.1.1 
 Python 4 Pentester
 Port Scanner
 
 Open Ports are:
 22, 80, 443
+📂 Structure du Projet
+├── port_scanner.py  # Script principal
+🔒 3. SSH Brute Force Attack
 
+📋 Description
+Un script automatisé pour effectuer une attaque par force brute sur un serveur SSH en utilisant une liste de mots de passe.
 
+🚀 Fonctionnalités
+Connexion SSH automatisée.
+Chargement d'une liste de mots de passe depuis un fichier texte.
+Gestion des erreurs d'authentification.
+Affichage des tentatives de connexion et du mot de passe valide trouvé.
+🛠️ Prérequis
+Python 3.x
+paramiko
+pwntools
+Installez les bibliothèques avec :
+
+pip install paramiko pwntools
+💻 Utilisation
+Préparez un fichier texte avec une liste de mots de passe (small.txt).
+Modifiez les paramètres du script :
+host = '192.12.1.1'
+username = 'kali'
+Lancez le script :
+python ssh_bruteforce.py
+📊 Exemple de sortie
+[0] Attempting password: '123456' !
+[X] Invalid password
+[1] Attempting password: 'password' !
+[>] Valid password found: 'admin123'!
+📂 Structure du Projet
+├── ssh_bruteforce.py  # Script principal
+├── small.txt          # Fichier de mots de passe

@@ -1,7 +1,7 @@
 from pwn import *
 import paramiko
 2
-host = "192.168.1.1"
+host = "192.12.1.1"
 username = "kali"
 attempts = 0
 

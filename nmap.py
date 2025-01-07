@@ -8,7 +8,7 @@ ascii_banner = pyfiglet.figlet_format("192.12.1.1 \n Python 4 Pentester\nPort Sc
 print(ascii_banner)
 
 #address ip de la machine a scanner
-ip = '192.168.1.1'
+ip = '192.12.1.1'
 open_ports =[]
 
 ports = range(1,65535)
